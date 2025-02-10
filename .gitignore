@@ -1,0 +1,4 @@
+.obsidian
+_build/
+venv/
+.idea/
