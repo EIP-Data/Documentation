@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Vérifier si Python 3 est installé
 if ! command -v python3 &> /dev/null
 then
     echo "Python 3 not installed. Please install it."
@@ -18,4 +17,4 @@ python3 -m sphinx --version
 
 sphinx-build -b html ./docs _build/html
 
-echo "Installation Done ! Open _build/html/index.html to view the documentation."
+echo "Installation Done ! type 'open _build/html/index.html' to view the documentation."
