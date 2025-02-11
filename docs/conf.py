@@ -19,14 +19,14 @@
 
 # -- Project information -----------------------------------------------------
 
-project = u'NexData'
-copyright = u'2025-2027, Côme Terlecki, Mathieu Coulet'
-author = u'Côme Terlecki, Mathieu Coulet'
+project = u'EIP - Data'
+copyright = u'2025-2027, Côme Terlecki, Mathieu Coulet, Cyprien Diederichs, Tom Blancheton'
+author = u'Côme Terlecki, Mathieu Coulet, Cyprien Diederichs, Tom Blancheton'
 
 # The short X.Y version
 version = u'1.0'
 # The full version, including alpha/beta/rc tags
-release = u'EIP - Ideation'
+release = u'EIP - Data'
 
 
 # -- General configuration ---------------------------------------------------
@@ -131,8 +131,8 @@ latex_elements = {
 # (docs start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'Data.tex', u'DataVault Documentation',
-     u'Côme Terlecki, Mathieu Coulet', 'manual'),
+    (master_doc, 'Data.tex', u'EIP-Data Documentation',
+     u'Côme Terlecki, Mathieu Coulet, Cyprien Diederichs, Tom Blancheton', 'manual'),
 ]
 
 
@@ -141,7 +141,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (docs start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'DataVault', u'DataVault Documentation',
+    (master_doc, 'EIP-Data', u'EIP-Data Documentation',
      [author], 1)
 ]
 
@@ -152,8 +152,8 @@ man_pages = [
 # (docs start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'DataVault', u'DataVault Documentation',
-     author, 'Data', 'DataVault.', 'Miscellaneous'),
+    (master_doc, 'EIP-Data', u'EIP-Data Documentation',
+     author, '', 'Côme Terlecki, Mathieu Coulet, Cyprien Diederichs, Tom Blancheton.', 'Miscellaneous'),
 ]
 
 
