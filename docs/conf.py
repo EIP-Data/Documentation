@@ -19,14 +19,14 @@
 
 # -- Project information -----------------------------------------------------
 
-project = u'EIP - Data'
+project = u'Datalyz'
 copyright = u'2025-2027, Côme Terlecki, Mathieu Coulet, Cyprien Diederichs, Tom Blancheton'
 author = u'Côme Terlecki, Mathieu Coulet, Cyprien Diederichs, Tom Blancheton'
 
 # The short X.Y version
 version = u'1.0'
 # The full version, including alpha/beta/rc tags
-release = u'EIP - Data'
+release = u'Datalyz'
 
 
 # -- General configuration ---------------------------------------------------
@@ -131,7 +131,7 @@ latex_elements = {
 # (docs start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'Data.tex', u'EIP-Data Documentation',
+    (master_doc, 'Data.tex', u'Datalyz Documentation',
      u'Côme Terlecki, Mathieu Coulet, Cyprien Diederichs, Tom Blancheton', 'manual'),
 ]
 
@@ -141,7 +141,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (docs start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'EIP-Data', u'EIP-Data Documentation',
+    (master_doc, 'Datalyz', u'Datalyz Documentation',
      [author], 1)
 ]
 
@@ -152,7 +152,7 @@ man_pages = [
 # (docs start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'EIP-Data', u'EIP-Data Documentation',
+    (master_doc, 'Datalyz', u'Datalyz Documentation',
      author, '', 'Côme Terlecki, Mathieu Coulet, Cyprien Diederichs, Tom Blancheton.', 'Miscellaneous'),
 ]
 
