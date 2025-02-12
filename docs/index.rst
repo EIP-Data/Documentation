@@ -6,11 +6,13 @@ Welcome to NexData's Documentation!
    :caption: Contents:
 
    index
+   Developper
    comment_ca_marche
    example_company_royalties
    project_architecture
    reponse_besoin
    technological_implementation
+   rendu
 
 
 Sections
