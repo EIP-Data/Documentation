@@ -5,12 +5,12 @@ Welcome to NexData's Documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   index
    comment_ca_marche
    example_company_royalties
    project_architecture
    reponse_besoin
    technological_implementation
+   roadmap
 
 
 Sections
