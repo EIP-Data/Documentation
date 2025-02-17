@@ -1,4 +1,4 @@
-Welcome to NexData's Documentation!
+Welcome to Datalyz's Documentation!
 ==================================
 
 .. toctree::
