@@ -5,11 +5,9 @@ Welcome to Datalyz's Documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   comment_ca_marche
-   example_company_royalties
-   project_architecture
-   reponse_besoin
-   technological_implementation
+   technical_documentation
+   deployment
+   testing_policy
    roadmap
 
 
