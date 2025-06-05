@@ -8,6 +8,14 @@ Welcome to Datalyz's Documentation!
    technical_documentation
    deployment
    testing_policy
+   index
+   Developper
+   comment_ca_marche
+   example_company_royalties
+   project_architecture
+   reponse_besoin
+   technological_implementation
+   rendu
    roadmap
 
 
