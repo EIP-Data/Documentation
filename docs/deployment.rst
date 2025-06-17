@@ -1,46 +1,47 @@
+
 .. Datalyz Deployment Guide
 
 ======================
-Guide de Déploiement
+Deployment Guide
 ======================
 
-Ce document décrit la configuration du dépôt et le pipeline CI/CD utilisé pour construire, tester et déployer le projet Datalyz.
+This document describes the repository setup and the CI/CD pipeline used to build, test, and deploy the Datalyz project.
 
-1. Configuration du Dépôt
+1. Repository Configuration
 --------------------------
 
-Stratégie de Branches
-~~~~~~~~~~~~~~~~~~~~~
-Le projet utilise une stratégie de branches claire pour organiser le développement :
+Branch Strategy
+~~~~~~~~~~~~~~~
+The project uses a clear branch strategy to organize development:
 
-*   **main** : Contient le code de production stable. Chaque fusion (merge) dans cette branche déclenche le pipeline de déploiement continu (CD).
-*   **develop** : Branche d'intégration pour les nouvelles fonctionnalités.
-*   **feature branches** : Branches dédiées au développement de fonctionnalités spécifiques, basées sur `develop`.
+*   **main**: Contains stable production code. Each merge into this branch triggers the continuous deployment (CD) pipeline.
+*   **develop**: Integration branch for new features.
+*   **feature branches**: Dedicated branches for specific features, based on `develop`.
 
-Automatisation avec le Dépôt Epitech
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Une GitHub Action est configurée pour se déclencher automatiquement à chaque `push` sur la branche `main` de l'organisation du projet. Cette action effectue ensuite un `push` du code dans le sous-dossier correspondant sur le dépôt Epitech (ex: `back-end`, `front-end`).
+Automation with Epitech Repository
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A GitHub Action is configured to trigger automatically on each `push` to the `main` branch of the project organization. This action then pushes the code into the corresponding subfolder on the Epitech repository (e.g., `back-end`, `front-end`).
 
-2. Pipeline CI/CD
+2. CI/CD Pipeline
 -------------------
 
-Le projet s'appuie sur un pipeline d'intégration et de déploiement continus (CI/CD) entièrement automatisé pour garantir la fiabilité et la rapidité des livraisons.
+The project relies on a fully automated continuous integration and deployment (CI/CD) pipeline to ensure reliable and fast deliveries.
 
-Outils Utilisés
-~~~~~~~~~~~~~~~
-*   **GitHub Actions** : Utilisé comme orchestrateur pour l'automatisation des workflows de CI/CD.
-*   **Terraform** : Employé pour le provisionnement et la gestion de l'infrastructure en tant que code (`.tf` files). Les secrets et variables d'environnement sont gérés via Terraform et GitHub Secrets.
-*   **Ansible** : Utilisé pour la configuration des serveurs, l'installation des dépendances (comme Docker) et le déploiement des applications.
-*   **Docker** : Standardise les environnements en encapsulant les applications et leurs dépendances, assurant la cohérence entre le développement, les tests et la production.
+Tools Used
+~~~~~~~~~~
+*   **GitHub Actions**: Used as the orchestrator for CI/CD workflow automation.
+*   **Terraform**: Used for infrastructure provisioning and management as code (`.tf` files). Secrets and environment variables are managed via Terraform and GitHub Secrets.
+*   **Ansible**: Used for server configuration, dependency installation (like Docker), and application deployment.
+*   **Docker**: Standardizes environments by encapsulating applications and their dependencies, ensuring consistency across development, testing, and production.
 
-Pipeline de Déploiement
-~~~~~~~~~~~~~~~~~~~~~~~
-Le pipeline est déclenché par une fusion sur la branche `main` et suit les étapes suivantes :
+Deployment Pipeline
+~~~~~~~~~~~~~~~~~~~
+The pipeline is triggered by a merge into the `main` branch and follows these steps:
 
-1.  **Build & Tests** : Compilation du code, validation, création des images Docker et exécution des tests (unitaires, intégration).
-2.  **Packaging & Versioning** : Création d'un artefact (image Docker, bundle WXT) et étiquetage de la version avec `git tag`.
-3.  **Provisionnement & Configuration** : Terraform déploie l'infrastructure nécessaire (serveurs, bases de données) et Ansible configure les environnements.
-4.  **Déploiement & Publication** :
-    *   L'infrastructure back-end est déployée via Docker/Kubernetes, Ansible et Terraform.
-    *   L'extension WXT est publiée sur les stores Chrome et Firefox, et auto-hébergée pour les autres navigateurs.
-5.  **Monitoring** : Les logs sont surveillés en continu à l'aide de Prometheus et Grafana pour assurer la stabilité du système.
+1.  **Build & Tests**: Code compilation, validation, Docker image creation, and execution of unit and integration tests.
+2.  **Packaging & Versioning**: Creation of an artifact (Docker image, WXT bundle) and version tagging with `git tag`.
+3.  **Provisioning & Configuration**: Terraform deploys the required infrastructure (servers, databases) and Ansible configures the environments.
+4.  **Deployment & Publication**:
+    *   The back-end infrastructure is deployed via Docker/Kubernetes, Ansible, and Terraform.
+    *   The WXT extension is published to the Chrome and Firefox stores, and self-hosted for other browsers.
+5.  **Monitoring**: Logs are continuously monitored using Prometheus and Grafana to ensure system stability.
