@@ -1,67 +1,37 @@
-User Navigation Analytics - Testing Policy
-========================================
 
-1. Testing Scope
----------------
-Covers all critical components:
-- WXT/VPN extension
-- Go/Gin API layer
-- Kafka message streams
-- Spark data processing
-- Worker services
-- PostgreSQL/Cassandra databases
+.. Datalyz Testing Policy
 
-2. Component-Specific Testing Strategy
--------------------------------------
+=================
+Testing Policy
+=================
 
-2.1 WXT/VPN Extension
-~~~~~~~~~~~~~~~~~~~~~
-*Data Collection Testing*:
-- Navigation tracking validation
-- Load testing under peak traffic
-- VPN encryption verification
+This document defines the testing policies, deployment strategies, and types of tests applied to the Datalyz project to ensure a high level of quality.
 
-*Tools*:
-- BrowserStack for cross-browser testing
-- Wireshark for traffic analysis
+1. Types of Tests
+-----------------
 
-2.2 Go/Gin API
-~~~~~~~~~~~~~~
-*Endpoint Validation*:
-- Route coverage
-- PostgreSQL integration tests
-- Kafka payload verification
+Our strategy integrates several types of tests to cover different aspects of the software:
 
-*Tools*:
-- Go test framework
-- Postman (shared collections)
+*   **Unit Tests**:
+    *   **Purpose**: Validate the correct functioning of individual and isolated code components (functions, methods). They are fast to execute and facilitate early debugging.
 
-2.3 Kafka Streams
-~~~~~~~~~~~~~~~~
-*Data Pipeline Tests*:
-- Schema validation (Avro/Protobuf)
-- Historical stream replay
+*   **Integration Tests**:
+    *   **Purpose**: Ensure that different modules or services work correctly when interacting. They are essential to ensure the system works harmoniously.
 
-*Tools*:
-- Confluent Schema Registry
+*   **Performance Tests**:
+    *   **Purpose**: Assess the responsiveness and stability of the software under different load conditions. They help identify bottlenecks and ensure a smooth user experience.
 
-3. Data-Specific Testing
------------------------
+*   **Security Tests**:
+    *   **Purpose**: Identify potential vulnerabilities in the code and infrastructure. Tools like TruffleHog for secret detection and SonarQube for vulnerability analysis are used.
 
-3.1 Spark Processing
-~~~~~~~~~~~~~~~~~~~
-- Transformation logic validation
-- ETL performance benchmarking
-- Failure recovery tests
+2. Testing Strategy and Code Quality
+------------------------------------
 
-3.2 Worker Services
-~~~~~~~~~~~~~~~~~~
-- Kafka consumption tests
-- Cassandra write validation
-- Resource monitoring (CPU/memory)
+*   **Automation**: Tests are integrated into the CI/CD pipeline and executed automatically on each `push` to ensure continuous validation.
+*   **Multi-Platform Compatibility**: GitHub Actions run tests on a matrix of multiple operating systems (OS) to ensure code compatibility and robustness.
+*   **Code Quality**: The **SonarQube** tool is used for continuous code quality analysis. It detects bugs, vulnerabilities, duplicated code, and code smells. It also provides metrics on test coverage and technical debt.
 
-4. Production Monitoring
------------------------
-Key alerts:
-- Kafka latency >100ms
-- API error rate >0.1%
+3. Deployment Strategy
+----------------------
+
+Production deployment is conditioned on the successful completion of all validation steps. Only code that has successfully passed all tests is integrated and deployed, reinforcing the quality and stability of the project.

@@ -5,7 +5,7 @@ Welcome to Datalyz's Documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   technical_documentation
+   technical_environment
    deployment
    testing_policy
    index
