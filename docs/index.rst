@@ -8,7 +8,7 @@ Welcome to Datalyz's Documentation!
    technological_environment
    deployment
    testing_policy
-   index
+   roadmap
    Developper
    comment_ca_marche
    example_company_royalties
@@ -16,7 +16,7 @@ Welcome to Datalyz's Documentation!
    reponse_besoin
    technological_implementation
    rendu
-   roadmap
+   index
 
 
 Sections
