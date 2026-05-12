@@ -26,7 +26,7 @@ jobs:
           git clone https://x-access-token:${{ secrets.CYP_CI_MIRROR_KEY }}@github.com/EIP-Data/Datalyz.git
           cd Datalyz
 
-          TARGET_DIR="documentation"
+          TARGET_DIR="greenlight-review"
 
           mkdir -p $TARGET_DIR
           rsync -av --delete \
