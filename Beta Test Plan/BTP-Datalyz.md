@@ -59,8 +59,8 @@ All of the listed features will be demonstrated during the beta presentation
 | F7 | User | Installation VPN | Install VPN on device (mobile, tablet) |  
 | F8 | User | Installation Proxy | Install Proxy on device (mobile, tablet) |  
 | F9 | User | Login to te Proxy | Login to the Proxy |  
-| F10 | User | Activate / Deactivate the Proxy | Acotivate and Deactivate the proxy on the device |  
-| F11 | User | Internet Access | Access to internet after login to the website at the first connexion of the proxy or activation of the proxy |  
+| F10 | User | Activate / Deactivate the Proxy | Activate and Deactivate the proxy on the device |  
+| F11 | User | Internet Access | Access to internet after login to into the proxy|  
 | F12 | User | Account Deletion | Can choose to delete his account when he desires |  
 | F13 | User | Consent management | Accept, withdraw, or update consent regarding data collection and processing |  
 | F14 | User | Data Deletion | Allow the user to request the removal of their contributed data from the aggregated dataset |  
