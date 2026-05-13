@@ -12,6 +12,14 @@ jobs:
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
+        with:
+          lfs: true
+          fetch-depth: 0
+
+      - name: Install Git LFS
+        run: |
+          git lfs install
+          git lfs pull
 
       - name: Copy workflows
         run: |
@@ -24,30 +32,40 @@ jobs:
           git config --global user.name "DATALYZ Mirror Bot"
 
           git clone https://x-access-token:${{ secrets.CYP_CI_MIRROR_KEY }}@github.com/EIP-Data/Datalyz.git
+
           cd Datalyz
+
+          git lfs install
 
           TARGET_DIR="greenlight-review"
 
-          mkdir -p $TARGET_DIR
+          mkdir -p "$TARGET_DIR"
+
           rsync -av --delete \
-          --exclude '.git' \
-          --exclude 'Datalyz' \
-          --exclude '.github/' \
-          --exclude '.github/workflows/mirror.yml' \
-          ${{ github.workspace }}/ $TARGET_DIR/
+            --exclude '.git' \
+            --exclude 'Datalyz' \
+            --exclude '.github/' \
+            --exclude '.github/workflows/mirror.yml' \
+            "${{ github.workspace }}/" "$TARGET_DIR/"
 
           mkdir -p .github/workflows
 
           for file in ${{ github.workspace }}/workflows/*.yml; do
             filename=$(basename "$file")
+
             if [ "$filename" = "mirror.yml" ]; then
               continue
             fi
+
             cp "$file" ".github/workflows/${TARGET_DIR}_${filename}"
           done
 
-          rm -rf $TARGET_DIR/workflows
+          rm -rf "$TARGET_DIR/workflows"
 
           git add .
+
           git commit -m "Mirror $TARGET_DIR on ${{ github.sha }}" || echo "No changes"
+
+          git lfs push origin --all
+
           git push
